@@ -27,6 +27,8 @@ setup(
             "my_first_node = my_py_pkg.my_first_node:main",
             "robot_news_station = my_py_pkg.robot_news_station:main",
             "smartphone = my_py_pkg.smartphone:main",
+            "add_server = my_py_pkg.add_server:main",
+            "add_client = my_py_pkg.add_client:main",
         ],
     },
 )
