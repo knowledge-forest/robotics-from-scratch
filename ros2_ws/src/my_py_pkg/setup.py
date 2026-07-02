@@ -30,6 +30,8 @@ setup(
             "add_server = my_py_pkg.add_server:main",
             "add_client = my_py_pkg.add_client:main",
             "area_server = my_py_pkg.area_server:main",
+            "count_until_server = my_py_pkg.count_until_server:main",
+            "count_until_client = my_py_pkg.count_until_client:main",
         ],
     },
 )

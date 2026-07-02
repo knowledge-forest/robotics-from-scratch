@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from example_interfaces.msg import String   # 內建字串訊息型別
+from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy, HistoryPolicy
 
 class RobotNewsStation(Node):
     def __init__(self):
@@ -14,8 +15,16 @@ class RobotNewsStation(Node):
         self.station_name_ = self.get_parameter("station_name").value
         freq = self.get_parameter("publish_frequency").value
 
-        self.publisher_ = self.create_publisher(String, "robot_news", 10)
-        self.create_timer(1.0 / freq, self.publish_news)   # 頻率 → 週期
+        # 設定 QoS 策略
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.RELIABLE,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=10
+        )
+        
+        self.publisher_ = self.create_publisher(String, "robot_news", qos_profile)
+        self.timer_ = self.create_timer(1.0 / freq, self.publish_news)
         self.get_logger().info(f"{self.station_name_} started at {freq} Hz.")
 
 
