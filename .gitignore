@@ -1,6 +1,13 @@
+# ROS 2 (colcon) generated
+build/
+install/
+log/
+__pycache__/
+*.pyc
+
+# ROS 1 (catkin) legacy
 devel/
 logs/
-build/
 bin/
 lib/
 msg_gen/
