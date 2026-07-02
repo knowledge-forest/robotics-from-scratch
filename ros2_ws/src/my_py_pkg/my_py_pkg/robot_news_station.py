@@ -5,14 +5,23 @@ from example_interfaces.msg import String   # 內建字串訊息型別
 class RobotNewsStation(Node):
     def __init__(self):
         super().__init__("robot_news_station")
-        # 建 publisher: (訊息型別, topic名, queue大小)
+
+        # 宣告參數 + 預設值
+        self.declare_parameter("station_name", "default_station")
+        self.declare_parameter("publish_frequency", 2.0)
+
+        # 讀參數值
+        self.station_name_ = self.get_parameter("station_name").value
+        freq = self.get_parameter("publish_frequency").value
+
         self.publisher_ = self.create_publisher(String, "robot_news", 10)
-        self.create_timer(0.5, self.publish_news)   # 每 0.5 秒發一次
-        self.get_logger().info("Robot News Station started.")
+        self.create_timer(1.0 / freq, self.publish_news)   # 頻率 → 週期
+        self.get_logger().info(f"{self.station_name_} started at {freq} Hz.")
+
 
     def publish_news(self):
         msg = String()
-        msg.data = "Hello from robot news station"
+        msg.data = f"Hello from {self.station_name_}!"
         self.publisher_.publish(msg)
 
 
