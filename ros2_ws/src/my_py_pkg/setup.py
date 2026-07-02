@@ -29,6 +29,7 @@ setup(
             "smartphone = my_py_pkg.smartphone:main",
             "add_server = my_py_pkg.add_server:main",
             "add_client = my_py_pkg.add_client:main",
+            "area_server = my_py_pkg.area_server:main",
         ],
     },
 )
