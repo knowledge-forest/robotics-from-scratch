@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教學 · Robotics from Scratch</title>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('rfs.theme') || 'light';</script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="wrap docs">
+    <aside id="docs-nav" class="docs-nav"></aside>
+    <article id="doc-body" class="doc-body"></article>
+  </main>
+
+  <script src="/data/data.js"></script>
+  <script type="module">
+    import { renderHeader } from '/js/components/header.js';
+    renderHeader(document.getElementById('site-header'), 'docs');
+  </script>
+  <script type="module" src="/js/pages/docs.page.js"></script>
+</body>
+</html>
