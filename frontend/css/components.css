@@ -1,8 +1,9 @@
 /* Header nav */
 .nav { display: flex; align-items: center; justify-content: space-between; }
 .nav-brand { font-weight: 600; color: var(--c-fg); }
-.nav-links { display: flex; gap: var(--sp-2); }
+.nav-links { display: flex; align-items: center; gap: var(--sp-2); }
 .nav-link.is-active { color: var(--c-fg); font-weight: 600; }
+.theme-toggle { background: none; border: 1px solid var(--c-border); color: var(--c-fg); border-radius: var(--radius); cursor: pointer; width: 28px; height: 28px; line-height: 1; }
 
 /* Progress bar */
 .progress { position: sticky; top: 0; background: var(--c-bg); padding: var(--sp-2) 0; border-bottom: 1px solid var(--c-border); }

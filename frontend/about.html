@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於 · Robotics from Scratch</title>
+  <script>document.documentElement.dataset.theme = localStorage.getItem('rfs.theme') || 'light';</script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="wrap doc-body">
+    <h1>關於</h1>
+    <p>Robotics Engineering from Scratch — 為軟體工程師設計的 ROS 2 學習路線。純軟體 / 模擬起步，0 硬體。</p>
+
+    <h2>理念</h2>
+    <ul>
+      <li>每階段先跑通再往上，專案驗收 &gt; 讀懂。</li>
+      <li>90% 概念有 SWE 類比，學很快；唯一全新 = tf2 + 空間數學。</li>
+      <li>內容為單一來源：markdown 於建置時轉為靜態頁面。</li>
+    </ul>
+
+    <h2>技術</h2>
+    <p>純 HTML / CSS / vanilla JS，建置時 <code>node scripts/build.mjs</code> 由 markdown 產生資料，Cloudflare Pages 部署。無框架。</p>
+
+    <p><a href="/roadmap.html">看學習路線 →</a></p>
+  </main>
+
+  <script src="/data/data.js"></script>
+  <script type="module">
+    import { renderHeader } from '/js/components/header.js';
+    renderHeader(document.getElementById('site-header'), 'about');
+  </script>
+</body>
+</html>
