@@ -1,0 +1,41 @@
+/* Design tokens — single source for color/space/type. Everything references these. */
+:root {
+    /* color */
+    --c-bg: #fafaf5;
+    --c-surface: #ffffff;
+    --c-fg: #1a1a1a;
+    --c-muted: #6b6b6b;
+    --c-border: #e2e2da;
+    --c-accent: #3553ff;
+    --c-done: #1f9d55;
+
+    /* space (4px scale) */
+    --sp-1: .5rem;
+    --sp-2: 1rem;
+    --sp-3: 1.5rem;
+    --sp-4: 2rem;
+    --sp-6: 3rem;
+
+    /* type */
+    --font-body: 'Source Serif 4', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --fs-sm: .85rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.75rem;
+
+    /* layout */
+    --maxw: 860px;
+    --radius: 6px;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+    --c-bg: #14140f;
+    --c-surface: #1e1e18;
+    --c-fg: #ececec;
+    --c-muted: #9a9a90;
+    --c-border: #33332c;
+    --c-accent: #7d90ff;
+    --c-done: #4ade80;
+}

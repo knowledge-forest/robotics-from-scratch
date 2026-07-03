@@ -1,0 +1,29 @@
+/* Reset + element defaults. No components here. */
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+html { color-scheme: light dark; }
+body {
+  background: var(--c-bg);
+  color: var(--c-fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+a { color: var(--c-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+code, pre { font-family: var(--font-mono); font-size: var(--fs-sm); }
+pre {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: var(--sp-2);
+  overflow-x: auto;
+}
+
+.wrap { 
+  max-width: var(--maxw);
+  margin: 0 auth;
+  padding: var(--sp-4) var(--sp-2);
+}
