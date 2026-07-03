@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://robotics-from-scratch.pages.dev/</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/roadmap.html</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/about.html</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#0/01-environment</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#1/01-package</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#1/02-topics</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#1/03-services</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#1/04-interfaces</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#1/05-parameters-launch</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#2/01-actions</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#2/02-action-client-cancel</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#2/03-qos</loc></url>
+  <url><loc>https://robotics-from-scratch.pages.dev/docs.html#2/04-ros2-bag</loc></url>
+</urlset>
