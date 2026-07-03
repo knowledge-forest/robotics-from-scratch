@@ -6,6 +6,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ROADMAP = join(ROOT, 'content', 'ROADMAP.md');
 const PHASE_DIR = join(ROOT, 'content', 'phase');
 const OUT = join(ROOT, 'frontend', 'data', 'data.js');
+const SITE = 'https://robotics-from-scratch.pages.dev'; // ← change to real domain
 
 /* ─────────────────────────  ROADMAP  ───────────────────────── */
 
@@ -147,7 +148,19 @@ function build() {
     `window.STATS = ${JSON.stringify({ total, complete, phases: phases.length, docs: docs.length })};\n`;
 
   writeFileSync(OUT, out, 'utf8');
+  writeSitemap(docs);
   console.log(`✅ ${phases.length} phases, ${total} lessons (${complete} complete), ${docs.length} docs → data.js`);
+}
+
+// sitemap.xml from static pages + one URL per doc hash
+function writeSitemap(docs) {
+  const urls = ['/', '/roadmap.html', '/docs.html', '/about.html'];
+  for (const d of docs) urls.push(`/docs.html#${d.id}`);
+  const body = urls
+    .map(u => `  <url><loc>${SITE}${u}</loc></url>`)
+    .join('\n');
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+  writeFileSync(join(ROOT, 'frontend', 'sitemap.xml'), xml, 'utf8');
 }
 
 build();
